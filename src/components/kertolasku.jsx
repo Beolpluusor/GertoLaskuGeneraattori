@@ -54,6 +54,23 @@ export default function kertolasku() {
         console.log("komponentti ladattu")
     }, []);
 
+
+    function Buttons () {
+        const numerot = [7,8,9,4,5,6,1,2,3,0];
+        
+        return (
+            <div className="numpad">
+                {numerot.map(luku => (
+                    <button
+                        key={luku}
+                        onClick={() => setVastaus(prev => prev + luku)}>
+                            {luku}
+                        </button>
+                ))}
+            </div>
+        )
+    };
+
     return (
         <div className="kertolasku">
             <h1>kertolasku</h1>
@@ -77,6 +94,7 @@ export default function kertolasku() {
             <br />
                 <p>oikein: {oikein}</p>
                 <p>vaarin: {vaarin}</p>
+            <Buttons />
             <button onClick={tarkistaVastaus}>vastaa</button>
             <button onClick={uusiTehtava}>uusi kertotaulu</button>
         </div>

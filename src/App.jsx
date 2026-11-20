@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Kertolasku from "./components/kertolasku";
 import "./kertolaskugeneraattori.css";
+import NumeroNappaimet from "./components/nappaimet";
+
 function App() {
 
   return (
