@@ -74,6 +74,11 @@ export default function kertolasku() {
 
     function nollaaVastaus () {
         setVastaus("");
+        uusiTehtava();
+        setVastaus("");
+        setHistoria([]);
+        setOikein(0);
+        setVaarin(0);
     };
 
     return (
