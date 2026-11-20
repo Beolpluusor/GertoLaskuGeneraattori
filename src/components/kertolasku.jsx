@@ -78,31 +78,27 @@ export default function kertolasku() {
 
     return (
         <div className="kertolasku">
-            <h1>kertolasku</h1>
-            <h2>lasku funktio:</h2> 
-            <p>{luku1} * {luku2}</p>
+            <h1>KERTOLASKU</h1>
+                <p>{luku1} * {luku2}</p>
             <br />
-            
-            <input
-                type="number"
-                value={vastaus}
-                onChange={(event) => setVastaus(event.target.value)} 
-            />
-            <h2>Historia</h2>
-            <ul>
-                {historia.map((rivi, index) => (
-                    <li key={index}>
-                        {rivi.luku1} x {rivi.luku2} = vastasit: {rivi.vastaus} oikea vastaus =  {rivi.oikeaVastaus}
-                    </li>
-                ))}
-            </ul>
-            <br />
+                <p>arvaus: [{vastaus}]</p>
                 <p>oikein: {oikein}</p>
                 <p>vaarin: {vaarin}</p>
+        
             <Buttons />
             <button onClick={tarkistaVastaus}>vastaa</button>
             <button onClick={uusiTehtava}>uusi kertotaulu</button>
             <button onClick={nollaaVastaus}>nollaa</button>
+
+            <h2>Historia</h2>
+                <ul>
+                    {historia.map((rivi, index) => (
+                        <li key={index}>
+                            {rivi.luku1} x {rivi.luku2} = vastasit: {rivi.vastaus} oikea vastaus =  {rivi.oikeaVastaus}
+                        </li>
+                    ))}
+                </ul>
+            <br />
         </div>
     )
 }
