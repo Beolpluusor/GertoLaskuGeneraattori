@@ -1,0 +1,19 @@
+.kertolasku {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.kertolasku input {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+.kertolasku button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 18px;
+}

@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# build
+dist/
+
+# logs
+logs
+*.log
+npm-debug.log*
+
+# environment variables
+.env
+.env.local
+
+# editorit
+.vscode/
+.idea/
+
+# käyttöjärjestelmä
+.DS_Store
+Thumbs.db
+
+# testit
+coverage/
+
+# vite
+.vite/
