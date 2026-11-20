@@ -71,6 +71,11 @@ export default function kertolasku() {
         )
     };
 
+
+    function nollaaVastaus () {
+        setVastaus("");
+    };
+
     return (
         <div className="kertolasku">
             <h1>kertolasku</h1>
@@ -97,6 +102,7 @@ export default function kertolasku() {
             <Buttons />
             <button onClick={tarkistaVastaus}>vastaa</button>
             <button onClick={uusiTehtava}>uusi kertotaulu</button>
+            <button onClick={nollaaVastaus}>nollaa</button>
         </div>
     )
 }
