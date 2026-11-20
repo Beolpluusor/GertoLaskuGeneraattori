@@ -42,7 +42,7 @@ export default function kertolasku() {
         };
         // asetetaan uusimerkintä historiaan
         setHistoria(prev =>
-            [...prev, uusiMerkinta].slice(-10)
+            [uusiMerkinta, ...prev].slice(0, 10)
         );
         // nollataan tehtävä ja vastaus
         uusiTehtava();
