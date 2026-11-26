@@ -9,15 +9,15 @@ import Divide from "./components/divide";
 import Subtract from "./components/subtract";
 
 function App() {
-
+  const [ difficulty, setDifficulty ] = useState(1);
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<GamePage />} />
-        <Route path="/multiplication" element={<Kertolasku />} />
-        <Route path="/plus" element={<Plus />} />
-        <Route path="/divide" element={<Divide />} />
-        <Route path="/subtract" element={<Subtract />} />
+        <Route path="/" element={<GamePage difficulty={difficulty} setDifficulty={setDifficulty} />} />
+        <Route path="/multiplication" element={<Kertolasku difficulty={difficulty}/>} />
+        <Route path="/plus" element={<Plus difficulty={difficulty}/>} />
+        <Route path="/divide" element={<Divide difficulty={difficulty}/>} />
+        <Route path="/subtract" element={<Subtract difficulty={difficulty}/>} />
       </Routes>
     </BrowserRouter>
   );

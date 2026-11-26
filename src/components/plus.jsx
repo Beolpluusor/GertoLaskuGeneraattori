@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
-export default function multiply() {
+export default function multiply({ difficulty }) {
     const navigate = useNavigate();
 
     // useState muuttujat
-    const [ luku1, setLuku1 ] = useState(Math.floor(Math.random() * 10) + 1);
-    const [ luku2, setLuku2 ] = useState(Math.floor(Math.random() * 10) + 1);
+    const [ luku1, setLuku1 ] = useState(Math.floor(Math.random() * 10) + difficulty);
+    const [ luku2, setLuku2 ] = useState(Math.floor(Math.random() * 10) + difficulty);
     const [ vastaus, setVastaus ] = useState(0);
     const [ historia, setHistoria ] = useState([]);
     const [ oikein, setOikein ] = useState(0);
@@ -13,8 +13,8 @@ export default function multiply() {
 
     // luodaan uudet luvut muuttujiin nappi
     const uusiTehtava = () => {
-        setLuku1(Math.floor(Math.random() * 10) + 1);
-        setLuku2(Math.floor(Math.random() * 10) + 1);
+        setLuku1(Math.floor(Math.random() * 10) + difficulty);
+        setLuku2(Math.floor(Math.random() * 10) + difficulty);
     };
     // tarkistetaan vastaus
     // plussataan oikein tai väärin

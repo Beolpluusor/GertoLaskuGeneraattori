@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
-export default function divide() {
+export default function divide({ difficulty }) {
     const navigate = useNavigate();
 
     // useState muuttujat
-    const [ luku1, setLuku1 ] = useState(Math.floor(Math.random() * 10) + 1);
-    const [ luku2, setLuku2 ] = useState(Math.floor(Math.random() * 10) + 1);
+
+    const [ luku1, setLuku1 ] = useState(Math.floor(Math.random() * 10) + difficulty);
+    const [ luku2, setLuku2 ] = useState(Math.floor(Math.random() * 10) + difficulty);
     const [ vastaus, setVastaus ] = useState(0);
     const [ historia, setHistoria ] = useState([]);
     const [ oikein, setOikein ] = useState(0);
@@ -13,9 +14,10 @@ export default function divide() {
 
     // luodaan uudet luvut muuttujiin nappi
     const uusiTehtava = () => {
-        setLuku1(Math.floor(Math.random() * 10) + 1);
-        setLuku2(Math.floor(Math.random() * 10) + 1);
+        setLuku1(Math.floor(Math.random() * 10) + difficulty);
+        setLuku2(Math.floor(Math.random() * 10) + difficulty);
     };
+
     // tarkistetaan vastaus
     // plussataan oikein tai väärin
     // nollataan lopussa statet
@@ -84,12 +86,11 @@ export default function divide() {
     return (
         <div className="kertolasku">
             <h1>Divide!</h1>
-                <p>{luku1} / {luku2}</p>
+            <p>{luku1} / {luku2}</p>
             <br />
                 <p>your answer: [{vastaus}]</p>
                 <p>correct points: {oikein}</p>
                 <p>wrong points: {vaarin}</p>
-        
             <Buttons />
             <button onClick={tarkistaVastaus}>answer</button>
             <button onClick={uusiTehtava}>new calculation</button>

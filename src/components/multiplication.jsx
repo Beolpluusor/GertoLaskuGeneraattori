@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
-export default function kertolasku() {
+export default function kertolasku({ difficulty }) {
     const navigate = useNavigate();
 
     // useState muuttujat
-    const [ luku1, setLuku1 ] = useState(Math.floor(Math.random() * 10) + 1);
-    const [ luku2, setLuku2 ] = useState(Math.floor(Math.random() * 10) + 1);
+    const [ luku1, setLuku1 ] = useState(Math.floor(Math.random() * (difficulty * 10)) + 1);
+    const [ luku2, setLuku2 ] = useState(Math.floor(Math.random() * (difficulty * 10)) + 1);
     const [ vastaus, setVastaus ] = useState(0);
     const [ historia, setHistoria ] = useState([]);
     const [ oikein, setOikein ] = useState(0);
@@ -13,8 +13,8 @@ export default function kertolasku() {
 
     // luodaan uudet luvut muuttujiin nappi
     const uusiTehtava = () => {
-        setLuku1(Math.floor(Math.random() * 10) + 1);
-        setLuku2(Math.floor(Math.random() * 10) + 1);
+        setLuku1(Math.floor(Math.random() * 10) + difficulty);
+        setLuku2(Math.floor(Math.random() * 10) + difficulty);
     };
     // tarkistetaan vastaus
     // plussataan oikein tai väärin
@@ -53,7 +53,8 @@ export default function kertolasku() {
     //useEffect komponenttien lataamiseen
     useEffect(() => {
         console.log("komponentti ladattu")
-    }, []);
+        uusiTehtava();
+    }, [difficulty]);
 
 
     function Buttons () {
@@ -82,7 +83,7 @@ export default function kertolasku() {
     };
 
     return (
-        <div className="kertolasku">
+        <div className="kertolasku">       
             <h1>Multiply!</h1>
                 <p>{luku1} * {luku2}</p>
             <br />
