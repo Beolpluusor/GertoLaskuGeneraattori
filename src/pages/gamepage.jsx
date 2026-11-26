@@ -12,19 +12,19 @@ function GamePage ({difficulty, setDifficulty, language, setLanguage }) {
     function gameSelect(selectedGame) {
         setChooseGame(selectedGame);
 
-        if (selectedGame === "multiplication") {
+        if (selectedGame === t.game1) {
             navigate("/multiplication");
         }
 
-        if (selectedGame === "plus") {
+        if (selectedGame === t.game2) {
             navigate("/plus");
         }
 
-        if (selectedGame === "subtract") {
+        if (selectedGame === t.game3) {
             navigate("/subtract");
         }
 
-        if (selectedGame === "divide") {
+        if (selectedGame === t.game4) {
             navigate("/divide");
         }
     }
