@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
+import { translations } from "../languages/translations";
+
 export default function kertolasku({ difficulty }) {
     const navigate = useNavigate();
+    const t = translations[language];
 
     // useState muuttujat
     const [ luku1, setLuku1 ] = useState(Math.floor(Math.random() * (difficulty * 10)) + 1);
@@ -87,25 +90,25 @@ export default function kertolasku({ difficulty }) {
             <h1>Multiply!</h1>
                 <p>{luku1} * {luku2}</p>
             <br />
-                <p>your answer: [{vastaus}]</p>
-                <p>correct points: {oikein}</p>
-                <p>wrong points: {vaarin}</p>
+                <p>{t.answer}: [{vastaus}]</p>
+                <p>{t.correctPoints}: {oikein}</p>
+                <p>{t.wrongPoints}: {vaarin}</p>
         
             <Buttons />
-            <button onClick={tarkistaVastaus}>answer</button>
-            <button onClick={uusiTehtava}>new calculation</button>
-            <button onClick={nollaaVastaus}>reset</button>
+            <button onClick={tarkistaVastaus}>{t.answer}</button>
+            <button onClick={uusiTehtava}>{t.newCalc}</button>
+            <button onClick={nollaaVastaus}>{t.reset}</button>
 
-            <h2>History</h2>
+            <h2>{t.history}</h2>
                 <ul>
                     {historia.map((rivi, index) => (
                         <li key={index}>
-                            {rivi.luku1} x {rivi.luku2} = you answered: {rivi.vastaus} correct answer =  {rivi.oikeaVastaus}
+                            {rivi.luku1} x {rivi.luku2} = {t.yAnswer}: {rivi.vastaus} {t.correctAnswer} =  {rivi.oikeaVastaus}
                         </li>
                     ))}
                 </ul>
             <br />
-            <button onClick={() => navigate("/")}>back to games</button>
+            <button onClick={() => navigate("/")}>{t.back}</button>
         </div>
     )
 }

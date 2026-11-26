@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import { translations } from "../languages/translations";
 
-function GamePage ({difficulty, setDifficulty }) {
+function GamePage ({difficulty, setDifficulty, language, setLanguage }) {
     const [ chooseGame, setChooseGame ] = useState("");
     const listGames = ["multiplication", "plus", "subtract", "divide"]
     const navigate = useNavigate();
+    const t = translations[language];
 
 
     function gameSelect(selectedGame) {
@@ -31,7 +33,7 @@ function GamePage ({difficulty, setDifficulty }) {
     return (
         <>
         <div>
-            <h1>choose your game</h1>
+            <h1>{t.chooseGame}</h1>
             {listGames.map(game => (
                 <button
                 key={game}
@@ -42,11 +44,20 @@ function GamePage ({difficulty, setDifficulty }) {
             <p>Difficulty: {difficulty}</p>
 
             <button onClick={() => setDifficulty(prev => prev + 1)}>
-                Raise Difficulty
+                {t.raiseDifficulty}
             </button>
 
             <button onClick={() => setDifficulty(prev => Math.max(1, prev - 1))}>
-                Lower Difficulty
+                {t.lowerDifficulty}
+            </button>
+            <br />
+            <h3>{t.selectedL} : {t.language}</h3>
+            <button
+                onClick={() =>
+                    setLanguage(language === "fi" ? "en" : "fi")
+                }
+            >
+                {language === "fi" ? "English" : "Suomi"}
             </button>
         </div>
         </>
