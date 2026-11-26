@@ -8,8 +8,8 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'Kertolasku',
-        short_name: 'Kertolasku',
+        name: 'Brainiac',
+        short_name: 'Brainiac',
         theme_color: '#ffffff',
         background_color: '#ffffff',
         display: 'standalone',
