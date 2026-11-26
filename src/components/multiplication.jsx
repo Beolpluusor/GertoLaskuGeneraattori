@@ -86,7 +86,7 @@ export default function kertolasku({ difficulty, language }) {
     };
 
     return (
-        <div className="kertolasku">       
+        <div className="component">       
             <h1>Multiply!</h1>
                 <p>{luku1} * {luku2}</p>
             <br />

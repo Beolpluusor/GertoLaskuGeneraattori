@@ -85,7 +85,7 @@ export default function subtract({ difficulty, language }) {
     };
 
     return (
-        <div className="kertolasku">
+        <div className="component">
             <h1>{t.chooseGame}</h1>
                 <p>{luku1} - {luku2}</p>
             <br />

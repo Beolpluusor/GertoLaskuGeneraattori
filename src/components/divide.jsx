@@ -87,7 +87,7 @@ export default function divide({ difficulty, language }) {
     };
 
     return (
-        <div className="kertolasku">
+        <div className="component">
             <h1>Divide!</h1>
             <p>{luku1} / {luku2}</p>
             <br />

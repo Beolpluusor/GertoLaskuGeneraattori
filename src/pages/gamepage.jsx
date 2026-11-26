@@ -59,6 +59,7 @@ function GamePage ({difficulty, setDifficulty, language, setLanguage }) {
             >
                 {language === "fi" ? "English" : "Suomi"}
             </button>
+            <p>{t.info}</p>
         </div>
         </>
     )

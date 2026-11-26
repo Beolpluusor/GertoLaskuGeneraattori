@@ -14,7 +14,8 @@ export const translations = {
         reset: "nollaa",
         language: "Suomi",
         selectedL: "valittu kieli",
-        difficulty: "vaikeustaso"
+        difficulty: "vaikeustaso",
+        info: "vaikeustaso nostaa kerrointa esim oletus on 10 * 1, 1=kerroin."
     },
 
     en: {
@@ -32,6 +33,7 @@ export const translations = {
         reset: "reset",
         language: "English",
         selectedL: "chosen language",
-        difficulty: "difficulty"
+        difficulty: "difficulty",
+        info: "difficulty raises multiplier. the default is 10 * 1, 1=multiplier."
     }
 };

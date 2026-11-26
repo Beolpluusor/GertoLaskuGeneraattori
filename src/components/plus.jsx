@@ -85,7 +85,7 @@ export default function multiply({ difficulty, language }) {
     };
 
     return (
-        <div className="kertolasku">
+        <div className="component">
             <h1>{t.gameName}</h1>
                 <p>{luku1} + {luku2}</p>
             <br />
