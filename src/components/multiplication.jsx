@@ -6,7 +6,7 @@ export default function kertolasku({ difficulty }) {
     // useState muuttujat
     const [ luku1, setLuku1 ] = useState(Math.floor(Math.random() * (difficulty * 10)) + 1);
     const [ luku2, setLuku2 ] = useState(Math.floor(Math.random() * (difficulty * 10)) + 1);
-    const [ vastaus, setVastaus ] = useState(0);
+    const [ vastaus, setVastaus ] = useState("");
     const [ historia, setHistoria ] = useState([]);
     const [ oikein, setOikein ] = useState(0);
     const [ vaarin, setVaarin ] = useState(0);
