@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import { translations } from "../languages/translations";
 
-export default function kertolasku({ difficulty }) {
+export default function kertolasku({ difficulty, language }) {
     const navigate = useNavigate();
     const t = translations[language];
 
