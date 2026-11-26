@@ -86,7 +86,7 @@ export default function multiply({ difficulty, language }) {
 
     return (
         <div className="component">
-            <h1>{t.gameName}</h1>
+            <h1>plus!</h1>
                 <p>{luku1} + {luku2}</p>
             <br />
                 <p>{t.yAnswer}: [{vastaus}]</p>

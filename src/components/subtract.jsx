@@ -86,7 +86,7 @@ export default function subtract({ difficulty, language }) {
 
     return (
         <div className="component">
-            <h1>{t.chooseGame}</h1>
+            <h1>subtract!</h1>
                 <p>{luku1} - {luku2}</p>
             <br />
                 <p>{t.answer}: [{vastaus}]</p>
