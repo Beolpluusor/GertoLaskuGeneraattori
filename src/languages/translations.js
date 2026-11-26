@@ -1,5 +1,9 @@
 export const translations = {
     fi: {
+        game1: "kertolasku",
+        game2: "lisää",
+        game3: "vähennä",
+        game4: "jaa",
         chooseGame: "Valitse peli",
         raiseDifficulty: "Nosta vaikeutta",
         lowerDifficulty: "Laske vaikeutta",
@@ -19,6 +23,10 @@ export const translations = {
     },
 
     en: {
+        game1: "multiply",
+        game2: "plus",
+        game3: "subtraction",
+        game4: "divide",
         chooseGame: "Choose game",
         raiseDifficulty: "Raise difficulty",
         lowerDifficulty: "Lower difficulty",

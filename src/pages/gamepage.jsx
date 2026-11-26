@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { translations } from "../languages/translations";
 
 function GamePage ({difficulty, setDifficulty, language, setLanguage }) {
-    const [ chooseGame, setChooseGame ] = useState("");
-    const listGames = ["multiplication", "plus", "subtract", "divide"]
-    const navigate = useNavigate();
     const t = translations[language];
-
+    const [ chooseGame, setChooseGame ] = useState("");
+    const listGames = [t.game1, t.game2, t.game3, t.game4];
+    const navigate = useNavigate();
+    
 
     function gameSelect(selectedGame) {
         setChooseGame(selectedGame);
@@ -29,7 +29,6 @@ function GamePage ({difficulty, setDifficulty, language, setLanguage }) {
         }
     }
 
-    
     return (
         <>
         <div>
