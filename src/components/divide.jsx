@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-
-export default function kertolasku() {
+import { useNavigate } from "react-router-dom";
+export default function divide() {
+    const navigate = useNavigate();
 
     // useState muuttujat
     const [ luku1, setLuku1 ] = useState(Math.floor(Math.random() * 10) + 1);
@@ -21,7 +22,7 @@ export default function kertolasku() {
     const tarkistaVastaus = () => {
 
         // otetaan ylös oikea tulos luvuista 1 ja 2
-        let oikeaTulos = Number(luku1) * Number(luku2);
+        let oikeaTulos = Number(luku1) / Number(luku2);
         // otetaan ylös käyttäjän syöte
         let kayttajanSyote = Number(vastaus);
 
@@ -82,27 +83,28 @@ export default function kertolasku() {
 
     return (
         <div className="kertolasku">
-            <h1>KERTOLASKU</h1>
-                <p>{luku1} * {luku2}</p>
+            <h1>Divide!</h1>
+                <p>{luku1} / {luku2}</p>
             <br />
-                <p>arvaus: [{vastaus}]</p>
-                <p>oikein: {oikein}</p>
-                <p>vaarin: {vaarin}</p>
+                <p>your answer: [{vastaus}]</p>
+                <p>correct points: {oikein}</p>
+                <p>wrong points: {vaarin}</p>
         
             <Buttons />
-            <button onClick={tarkistaVastaus}>vastaa</button>
-            <button onClick={uusiTehtava}>uusi kertotaulu</button>
-            <button onClick={nollaaVastaus}>nollaa</button>
+            <button onClick={tarkistaVastaus}>answer</button>
+            <button onClick={uusiTehtava}>new calculation</button>
+            <button onClick={nollaaVastaus}>reset</button>
 
-            <h2>Historia</h2>
+            <h2>History</h2>
                 <ul>
                     {historia.map((rivi, index) => (
                         <li key={index}>
-                            {rivi.luku1} x {rivi.luku2} = vastasit: {rivi.vastaus} oikea vastaus =  {rivi.oikeaVastaus}
+                            {rivi.luku1} / {rivi.luku2} = you answered: {rivi.vastaus} correct answer =  {rivi.oikeaVastaus}
                         </li>
                     ))}
                 </ul>
             <br />
+            <button onClick={() => navigate("/")}>back to games</button>
         </div>
     )
 }
