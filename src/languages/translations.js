@@ -13,7 +13,8 @@ export const translations = {
         correctAnswer: "oikea vastaus",
         reset: "nollaa",
         language: "Suomi",
-        selectedL: "valittu kieli"
+        selectedL: "valittu kieli",
+        difficulty: "vaikeustaso"
     },
 
     en: {
@@ -30,6 +31,7 @@ export const translations = {
         correctAnswer: "correct answer",
         reset: "reset",
         language: "English",
-        selectedL: "chosen language"
+        selectedL: "chosen language",
+        difficulty: "difficulty"
     }
 };

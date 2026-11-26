@@ -41,7 +41,7 @@ function GamePage ({difficulty, setDifficulty, language, setLanguage }) {
                     {game}
                 </button>
             ))}
-            <p>Difficulty: {difficulty}</p>
+            <p>{t.difficulty}: {difficulty}</p>
 
             <button onClick={() => setDifficulty(prev => prev + 1)}>
                 {t.raiseDifficulty}
